@@ -27,10 +27,15 @@ export default {
         primary: {
           DEFAULT: "#9d8cff",
           hover: "#8a77ff",
+          light: "#b3a6ff",
         },
         dark: {
           DEFAULT: "#1a1b23",
           lighter: "#22242c",
+        },
+        light: {
+          DEFAULT: "#ffffff",
+          darker: "#f5f5f5",
         },
       },
       keyframes: {

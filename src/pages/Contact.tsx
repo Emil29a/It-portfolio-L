@@ -1,85 +1,54 @@
 import Navbar from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
-import { FileText, Bell } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
+import { ContactForm } from "@/components/ContactForm";
+import { Mail, Phone } from "lucide-react";
+import SEO from "@/components/SEO";
+import { seoConfig } from "@/config/seo";
 
 const Contact = () => {
-  const { toast } = useToast();
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    toast({
-      title: "Wiadomość wysłana",
-      description: "Dziękujemy za kontakt. Odpowiemy najszybciej jak to możliwe.",
-    });
-  };
-
   return (
     <div className="min-h-screen bg-dark text-white">
+      <SEO 
+        title={seoConfig.contact.title}
+        description={seoConfig.contact.description}
+        keywords={seoConfig.contact.keywords}
+      />
       <Navbar />
-      <div className="container mx-auto px-4 pt-24">
-        <h1 className="text-4xl font-bold text-center mb-12 animate-fade-up">Kontakt</h1>
-        
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-dark-lighter p-8 rounded-lg animate-fade-up" style={{ animationDelay: "200ms" }}>
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Imię i Nazwisko
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  className="w-full p-3 rounded-md bg-dark border border-gray-700 text-white"
-                  required
-                />
+      <div className="container mx-auto px-4 pt-24 pb-16">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-4xl font-bold mb-8 text-center">Kontakt</h1>
+          
+          <div className="space-y-12">
+            <div>
+              <h2 className="text-2xl font-semibold mb-4">Formularz kontaktowy</h2>
+              <ContactForm />
+            </div>
+
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold mb-4">Dane kontaktowe</h2>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex items-center gap-3 bg-dark-lighter p-4 rounded-lg border border-primary/10 hover:border-primary/30 transition-colors">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Mail className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">E-mail</p>
+                    <a href="mailto:Emil.Kwiecinski410@gmail.com" className="hover:text-primary transition-colors">
+                      Emil.Kwiecinski410@gmail.com
+                    </a>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-dark-lighter p-4 rounded-lg border border-primary/10 hover:border-primary/30 transition-colors">
+                  <div className="bg-primary/10 p-3 rounded-full">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-400">Telefon</p>
+                    <a href="tel:+48690678955" className="hover:text-primary transition-colors">
+                      +48 690 678 955
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  className="w-full p-3 rounded-md bg-dark border border-gray-700 text-white"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                  Telefon (opcjonalnie)
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  className="w-full p-3 rounded-md bg-dark border border-gray-700 text-white"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  Wiadomość
-                </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full p-3 rounded-md bg-dark border border-gray-700 text-white"
-                  required
-                />
-              </div>
-              <Button className="w-full bg-primary hover:bg-primary-hover text-white">
-                Wyślij wiadomość
-              </Button>
-            </form>
-            
-            <div className="mt-8 space-y-4 text-center">
-              <p className="flex items-center justify-center gap-2">
-                <FileText className="w-5 h-5 text-primary" />
-                Email: kontakt@emil-nazwisko.pl
-              </p>
-              <p className="flex items-center justify-center gap-2">
-                <Bell className="w-5 h-5 text-primary" />
-                Telefon: +48 XXX XXX XXX
-              </p>
             </div>
           </div>
         </div>

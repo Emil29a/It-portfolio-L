@@ -40,3 +40,21 @@
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 640px) {
+  #root {
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  /* Zwiększ padding-top dla głównych kontenerów treści */
+  .pt-20, .pt-24 {
+    padding-top: 5rem;
+  }
+}
+

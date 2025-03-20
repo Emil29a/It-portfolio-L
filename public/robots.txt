@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /o-mnie
+Allow: /uslugi
+Allow: /uslugi/automatyzacja
+Allow: /uslugi/analiza-danych
+Allow: /uslugi/bazy-danych
+Allow: /uslugi/powiadomienia
+Allow: /uslugi/wsparcie-techniczne
+Allow: /uslugi/rozwiazania-cyfrowe
+Allow: /kontakt
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+
+Sitemap: https://emilkwiecinski.pl/sitemap.xml 
